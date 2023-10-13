@@ -30,11 +30,14 @@ Example 1. This command generates a marker pattern with the specified parameters
 python cv_marker_gen_pattern.py -o "output_pattern.png" -i 0 -t "DICT_APRILTAG_36h11" -d 72 -s 50 -m 5 -x 3 -y 4 --write-id -p "ful"
 ```
 
+![example1](Examples/output_pattern.png)
+
 Example 2. This command will run the `cv_marker_gen_pattern.py` script to generate a marker pattern with the following characteristics: It's named "april_piedepole24x24.png," starts with an ID of 0, uses the "DICT_APRILTAG_36h11" dictionary, has a DPI of 72, each tag is 6 mm in size with 1 mm margins, doesn't write IDs on the tags, and creates a grid of 24x24 ArUco tags using the "PIED_DE_POULES_8X8" pattern.
 
 ```bash
 python cv_marker_gen_pattern.py -o "april_piedepole24x24.png" -i 0 -t "DICT_APRILTAG_36h11" -d 72 -s 6 -m 1 --no-write-id -x 24 -y 24 -p "pdp8"
 ```
+![example2](Examples/april_piedepole24x24.png)
 
 ## Command Line Arguments
 
