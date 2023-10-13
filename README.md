@@ -4,7 +4,7 @@ CV Marker Pattern Generator is a Python script for generating marker patterns fo
 
 by Rong-Hao Liang: r.liang@tue.nl
 
-Update (Oct 13, 2023): Tested with opencv-python ver. 4.6.0.66 and Python 3.9
+Update (Oct 13, 2023): Tested with OpenCV 4.6 and Python 3.9
 
 The CV Marker Pattern Generator is a Python script that allows you to generate marker patterns for computer vision applications. These marker patterns can be used for tasks such as camera calibration and object tracking. This script is adapted from code originally written by Jes Fink-Jensen and Loe Feijs. It uses the OpenCV library for computer vision tasks.
 
@@ -22,13 +22,19 @@ pip install opencv-contrib-python==4.6.0.66
 
 ## Usage Example
 
-Here's an example command to generate a marker pattern:
+Here are two example commands to generate a marker pattern:
+
+Example 1. This command generates a marker pattern with the specified parameters and saves it as "output_pattern.png."
 
 ```bash
 python cv_marker_gen_pattern.py -o "output_pattern.png" -i 0 -t "DICT_ARUCO_ORIGINAL" -d 72 -s 50 -m 5 -x 3 -y 4 --write-id -p "ful"
 ```
 
-This command generates a marker pattern with the specified parameters and saves it as "output_pattern.png".
+Example 2. This command will run the `cv_marker_gen_pattern.py` script to generate a marker pattern with the following characteristics: It's named "april_piedepole24x24.png," starts with an ID of 0, uses the "DICT_APRILTAG_36h11" dictionary, has a DPI of 72, each tag is 6 mm in size with 1 mm margins, doesn't write IDs on the tags, and creates a grid of 24x24 ArUco tags using the "PIED_DE_POULES_8X8" pattern.
+
+```bash
+python cv_marker_gen_pattern.py -o "april_piedepole24x24.png" -i 0 -t "DICT_APRILTAG_36h11" -d 72 -s 6 -m 1 --no-write-id -x 24 -y 24 -p "pdp8"
+```
 
 ## Command Line Arguments
 
@@ -45,6 +51,22 @@ The script accepts various command line arguments to customize the generated mar
 - `-write-id`: Write the ID of the tag on the pattern (default: True).
 - `p`, `-pattern`: Type of pattern (default: ful).
 
+For the example 2, 
+```bash
+python cv_marker_gen_pattern.py -o "april_piedepole24x24.png" -i 0 -t "DICT_APRILTAG_36h11" -d 72 -s 6 -m 1 --no-write-id -x 24 -y 24 -p "pdp8"
+```
+- `cv_marker_gen_pattern.py`: This is the name of the Python script that you want to execute.
+- `-o "april_piedepole24x24.png"`: This part specifies the output file name for the generated marker pattern. In this case, the output file will be named "april_piedepole24x24.png".
+- `-i 0`: The `-i` flag specifies the ID of the first ArUCo tag to generate. In this command, it's set to `0`.
+- `-t "DICT_APRILTAG_36h11"`: The `-t` flag specifies the type of ArUCo tag to generate. In this case, it's set to "DICT_APRILTAG_36h11", a specific type of ArUCo tag dictionary.
+- `-d 72`: The `-d` flag sets the output print's DPI (dots per inch) to 72. DPI determines the resolution of the printed image.
+- `-s 6`: The `-s` flag specifies the size of the ArUco tag in millimeters. In this command, it's set to 6 mm.
+- `-m 1`: The `-m` flag sets the size in millimeters of the margins between the ArUco tags. It's set to 1 mm.
+- `--no-write-id`: This is a command line option that tells the script not to write the ID of the tag on the pattern. The IDs won't be printed on the tags if this option is used.
+- `-x 24`: The `-x` flag specifies the number of ArUco tags in the X direction. In this command, it's set to 24.
+- `-y 24`: The `-y` flag specifies the number of ArUco tags in the Y direction. In this command, it's also set to 24.
+- `-p "pdp8"`: The `-p` flag specifies the type of pattern to use. This command is set to "pdp8", corresponding to the "PIED_DE_POULES_8X8" pattern.
+
 ## Supported Patterns
 The CV Marker Pattern Generator supports various types of patterns, each designed for specific use cases. You can specify the pattern type using the -p or --pattern command line argument. Here are the supported patterns:
 
@@ -57,9 +79,9 @@ The CV Marker Pattern Generator supports various types of patterns, each designe
 - ge: GOOZE_EYE_6X8 Pattern. Creates a 6x8 gooze eye pattern.
 You can choose the pattern best suits your application by specifying the pattern type in the command line arguments.
 
-## Supported ArUCo Types
+## Supported Marker Types
 
-The following ArUCo types are supported:
+The following marker types are supported:
 
 - DICT_4X4_50
 - DICT_4X4_100
@@ -83,14 +105,9 @@ The following ArUCo types are supported:
 - DICT_APRILTAG_36h10
 - DICT_APRILTAG_36h11
 
-## Output
-
-The script will generate an image containing the ArUCo tags based on the provided parameters. The output will be saved to the specified path.
-
 ## Notes
-
 - Make sure you have the required libraries (Python, OpenCV) installed before running the script.
-- Check that the grid dimensions and sizes fit within the specified DPI and A4 paper size.
+- Check that the grid dimensions and sizes fit within the specified DPI and A4 paper size, and the final print should not be scaled.
 - If you encounter any issues, contact Rong-Hao Liang via (r.liang@tue.nl)
 
 Enjoy using the CV Marker Pattern Generator for your computer vision projects!
