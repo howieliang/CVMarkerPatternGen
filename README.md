@@ -68,16 +68,16 @@ python cv_marker_gen_pattern.py -o "april_piedepole24x24.png" -i 0 -t "DICT_APRI
 - `-p "pdp8"`: The `-p` flag specifies the type of pattern to use. This command is set to "pdp8", corresponding to the "PIED_DE_POULES_8X8" pattern.
 
 ## Supported Patterns
-The CV Marker Pattern Generator supports various types of patterns, each designed for specific use cases. You can specify the pattern type using the -p or --pattern command line argument. Here are the supported patterns:
+The CV Marker Pattern Generator supports various patterns, each designed for specific use cases. You can specify the pattern type using the -p or --pattern command line argument. Here are the supported patterns:
 
-- ful: FULL Pattern. This pattern generates a full pattern matrix.
-- chk: CHECKERS_2X2 Pattern. Generates a checkerboard pattern with a 2x2 grid.
-- pt4: PUPPY_TOOTH_4X4 Pattern. Creates a 4x4 puppy tooth pattern.
-- pdp8: PIED_DE_POULES_8X8 Pattern. Generates an 8x8 pied de poules pattern.
-- hb4: HERRING_BONE_4X4 Pattern. Creates a 4x4 herringbone pattern.
-- bt4: BROKEN_TWILL_4X4 Pattern. Generates a 4x4 broken twill pattern.
-- ge: GOOZE_EYE_6X8 Pattern. Creates a 6x8 gooze eye pattern.
-You can choose the pattern best suits your application by specifying the pattern type in the command line arguments.
+- `ful`: `FULL` Pattern. This pattern generates a full pattern matrix.
+- `chk`: `CHECKERS_2X2` Pattern. Generates a checkerboard pattern with a 2x2 grid.
+- `pt4`: `PUPPY_TOOTH_4X4` Pattern. Creates a 4x4 puppy tooth pattern.
+- `pdp8`: `PIED_DE_POULES_8X8` Pattern. Generates an 8x8 pied de poules pattern.
+- `hb4`: `HERRING_BONE_4X4` Pattern. Creates a 4x4 herringbone pattern.
+- `bt4`: `BROKEN_TWILL_4X4` Pattern. Generates a 4x4 broken twill pattern.
+- `ge`: `GOOZE_EYE_6X8` Pattern. Creates a 6x8 gooze eye pattern.
+You can choose the pattern best suits your application by specifying the pattern type in the command line arguments. In the example.pdf, you will find the examples
 
 ## Supported Marker Types
 
